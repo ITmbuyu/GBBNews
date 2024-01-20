@@ -1,0 +1,58 @@
+﻿@model GBBNews.Models.NewsStaff
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+
+<h4>NewsStaff</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NewsStaffId" />
+            <div class="form-group">
+                <label asp-for="NewsStaffName" class="control-label"></label>
+                <input asp-for="NewsStaffName" class="form-control" />
+                <span asp-validation-for="NewsStaffName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewsStaffSurname" class="control-label"></label>
+                <input asp-for="NewsStaffSurname" class="form-control" />
+                <span asp-validation-for="NewsStaffSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="staffBio" class="control-label"></label>
+                <input asp-for="staffBio" class="form-control" />
+                <span asp-validation-for="staffBio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="staffpicture" class="control-label"></label>
+                <input asp-for="staffpicture" class="form-control" />
+                <span asp-validation-for="staffpicture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

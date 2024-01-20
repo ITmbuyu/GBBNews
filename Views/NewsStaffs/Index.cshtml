@@ -1,0 +1,61 @@
+﻿@model IEnumerable<GBBNews.Models.NewsStaff>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsStaffName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsStaffSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staffBio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staffpicture)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsStaffName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewsStaffSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staffBio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staffpicture)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NewsStaffId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NewsStaffId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NewsStaffId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
